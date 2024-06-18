@@ -45,3 +45,5 @@ legoData.initialize().then(() => {
 }).catch((error) => {
     console.error('Error initializing Lego data:', error);
 });
+
+module.exports = app;
