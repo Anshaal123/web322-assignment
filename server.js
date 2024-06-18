@@ -7,6 +7,13 @@ const port = 8080;
 app.use(express.static(__dirname, 'public'));
 
 legoData.initialize().then(() => {
+    app.listen(port, () => {
+        console.log(`Server is running at http://localhost:${port}`);
+    });
+}).catch((error) => {
+    console.error('Error initializing Lego data:', error);
+});
+
     app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname + 'views', 'home.html'));
     });
@@ -39,11 +46,5 @@ legoData.initialize().then(() => {
         res.status(404).sendFile(__dirname + '/views/404.html');
     });
 
-    app.listen(port, () => {
-        console.log(`Server is running at http://localhost:${port}`);
-    });
-}).catch((error) => {
-    console.error('Error initializing Lego data:', error);
-});
 
 module.exports = app
