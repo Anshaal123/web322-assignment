@@ -8,11 +8,11 @@ app.use(express.static(__dirname, 'public'));
 
 legoData.initialize().then(() => {
     app.get('/', (req, res) => {
-        res.sendFile(__dirname + '/views/home.html');
+        res.sendFile(path.join(__dirname + 'views', 'home.html'));
     });
 
     app.get('/about', (req, res) => {
-        res.sendFile(__dirname + '/views/about.html');
+        res.sendFile(path.join(__dirname + 'views', 'about.html'));
     });
 
     app.get('/lego/sets', (req, res) => {
@@ -46,4 +46,4 @@ legoData.initialize().then(() => {
     console.error('Error initializing Lego data:', error);
 });
 
-module.exports = app;
+module.exports = app
