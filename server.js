@@ -1,10 +1,11 @@
 const express = require('express');
 const legoData = require('./modules/legoSets');
+const path = require('path');
 
 const app = express();
+app.use(express.static(__dirname + '/public'));
 const port = 8080;
-
-app.use(express.static(__dirname, 'public'));
+app.use(express.json);
 
 legoData.initialize().then(() => {
     app.listen(port, () => {
