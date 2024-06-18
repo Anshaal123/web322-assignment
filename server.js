@@ -4,7 +4,7 @@ const legoData = require('./modules/legoSets');
 const app = express();
 const port = 8080;
 
-app.use(express.static('public'));
+app.use(express.static(__dirname, 'public'));
 
 legoData.initialize().then(() => {
     app.get('/', (req, res) => {
