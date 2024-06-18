@@ -1,3 +1,16 @@
+/********************************************************************************
+*  WEB322 – Assignment 03
+* 
+*  I declare that this assignment is my own work in accordance with Seneca's
+*  Academic Integrity Policy:
+* 
+*  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+* 
+*  Name:Anshaal Kumar Student ID:172949224  Date: 6/18/24
+  Published URL: https://vercel.com/anshaal-kumars-projects/web322-assignment/AaxWuZ1NWibCwwJem14kQELZqTtU
+*
+********************************************************************************/
+
 const express = require('express');
 const legoData = require('./modules/legoSets');
 const path = require('path');
